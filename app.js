@@ -5,7 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
+var mongoose = require('mongoose');
+mongoose.Promise=global.Promise;
 
+mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true});
 
 var app = express();
 
